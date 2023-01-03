@@ -36,6 +36,7 @@ class InputDatosPersonalesScreen extends StatelessWidget {
               key: myFormKey,
               children: [
                 CustomInputField(
+                  
                   labelText: 'Nombres y Apellidos',
                   hintText: 'Nombre y apellido del usuario',
                   keyboardType: TextInputType.text,

@@ -17,6 +17,8 @@ class AppRoutes {
     // MenuOption(route: 'input_datos_personales', name: 'Datos Personales', screen: const InputDatosPersonalesScreen() , icon: Icons.add_card),
     // MenuOption(route: 'input_datos_economicos', name: 'Datos Economicos', screen: const InputDatosEconomicosScreen(), icon: Icons.data_usage_outlined),
     MenuOption(route: 'estudio_socioeconomico_screen', name: 'Estudio Socioeconómico Productivo', screen: const EstudioSocioeconomicoScreen(), icon: Icons.stacked_bar_chart),
+    MenuOption(route: 'stepper', name: 'Stepper', screen: const StepperScreen(), icon: Icons.list_alt),
+
 
 
   ];
