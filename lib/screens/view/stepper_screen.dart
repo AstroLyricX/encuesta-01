@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:encuesta_app/screens/screens.dart';
 import 'package:flutter/material.dart';
 
@@ -1549,78 +1550,1246 @@ class _StepperScreenState extends State<StepperScreen> {
                   // TODO: btn
                 ),
                 Step(
-                    title: const Text(
-                        'Financiamiento de proyectos y/o plan de negocio'),
-                    content: Column(
-                      children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          elevation: 5,
-                          child: Container(
-                            margin: const EdgeInsets.all(8),
-                            child: Wrap(
-                              alignment: WrapAlignment.spaceBetween,
-                              spacing: 8,
-                              children: [
-                                const Center(
-                                    heightFactor: 2,
-                                    child: Text(
-                                        '¿Usted  y su organización  han tenido  acceso a financiamiento de su plan de negocios o proyecto por?')),
-                                SizedBox(
-                                  width: 160,
-                                  child: SwitchListTile.adaptive(
-                                    title: const Text('No, Si'),
-                                    value: true,
-                                    onChanged: (value) => setState(() {
-                                      value = false;
-                                    }),
-                                  ),
+                  title: const Text(
+                      'Financiamiento de proyectos y/o plan de negocio'),
+                  content: Column(
+                    children: [
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Usted  y su organización  han tenido  acceso a financiamiento de su plan de negocios o proyecto por?')),
+                              SizedBox(
+                                width: 160,
+                                child: SwitchListTile.adaptive(
+                                  title: const Text('No, Si'),
+                                  value: true,
+                                  onChanged: (value) => setState(() {
+                                    value = false;
+                                  }),
                                 ),
-                                DropdownButtonFormField(
-                                  items: const [
-                                    DropdownMenuItem(
-                                        value: 'Procompite nacional',
-                                        child: Text('Procompite nacional')),
-                                    DropdownMenuItem(
-                                        value: 'Procompite Gobierno Regional ',
-                                        child: Text(
-                                            'Procompite Gobierno Regional')),
-                                    DropdownMenuItem(
-                                        value: 'Procompite Gobieno Municipal',
-                                        child: Text(
-                                            'Procompite Gobieno Municipal')),
-                                    DropdownMenuItem(
-                                        value: 'Fondoempleo',
-                                        child: Text('Fondoempleo')),
-                                    DropdownMenuItem(
-                                        value: 'Cooperacion internacional',
-                                        child:
-                                            Text('Cooperacion internacional')),
-                                    DropdownMenuItem(
-                                        value: 'Agroideas',
-                                        child: Text('Agroideas')),
-                                    DropdownMenuItem(
-                                        value: 'Empresa minera',
-                                        child: Text('Empresa minera')),
-                                    DropdownMenuItem(
-                                        value: 'Foncodes',
-                                        child: Text('Foncodes')),
-                                        DropdownMenuItem(
-                                        value: 'Otros',
-                                        child: Text('Otros')),
-                                  ],
-                                  onChanged: (value) {},
-                                ),
-                              ],
-                            ),
+                              ),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'Procompite nacional',
+                                      child: Text('Procompite nacional')),
+                                  DropdownMenuItem(
+                                      value: 'Procompite Gobierno Regional ',
+                                      child:
+                                          Text('Procompite Gobierno Regional')),
+                                  DropdownMenuItem(
+                                      value: 'Procompite Gobieno Municipal',
+                                      child:
+                                          Text('Procompite Gobieno Municipal')),
+                                  DropdownMenuItem(
+                                      value: 'Fondoempleo',
+                                      child: Text('Fondoempleo')),
+                                  DropdownMenuItem(
+                                      value: 'Cooperacion internacional',
+                                      child: Text('Cooperacion internacional')),
+                                  DropdownMenuItem(
+                                      value: 'Agroideas',
+                                      child: Text('Agroideas')),
+                                  DropdownMenuItem(
+                                      value: 'Empresa minera',
+                                      child: Text('Empresa minera')),
+                                  DropdownMenuItem(
+                                      value: 'Foncodes',
+                                      child: Text('Foncodes')),
+                                  DropdownMenuItem(
+                                      value: 'Otros', child: Text('Otros')),
+                                ],
+                                onChanged: (value) {},
+                              ),
+                            ],
                           ),
                         ),
+                      ),
+                    ],
+                  ),
+                  //TODO: btn
+                ),
+                //! 9 características del ganado vacuno
+                Step(
+                  title: const Text('Características del ganado vacuno'),
+                  content: Column(
+                    children: [
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text('Terneros(as)(menores a 1 año)')),
+                              SizedBox(
+                                width: 120,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Brown Swiss',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 80,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Criollo',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 90,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Holstein',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Otra raza',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Toltal',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text('Vaquillas (entre 1 a 2 años)')),
+                              SizedBox(
+                                width: 120,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Brown Swiss',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 80,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Criollo',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 90,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Holstein',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Otra raza',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Toltal',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      'Vaquillonas (mayor 2 años / primer parto)')),
+                              SizedBox(
+                                width: 120,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Brown Swiss',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 80,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Criollo',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 90,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Holstein',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Otra raza',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Toltal',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      'Toros (mayor a dos años sin castrar)')),
+                              SizedBox(
+                                width: 120,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Brown Swiss',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 80,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Criollo',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 90,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Holstein',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Otra raza',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Toltal',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text('Bueyes (castrados)')),
+                              SizedBox(
+                                width: 120,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Brown Swiss',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 80,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Criollo',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 90,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Holstein',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Otra raza',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Toltal',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text('Toretes de engorde')),
+                              SizedBox(
+                                width: 120,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Brown Swiss',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 80,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Criollo',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 90,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Holstein',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Otra raza',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Toltal',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text('Vacas en producción')),
+                              SizedBox(
+                                width: 120,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Brown Swiss',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 80,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Criollo',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 90,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Holstein',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Otra raza',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Toltal',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //TODO: btn
+                ),
+
+                //! categorias de ganado ovino
+                Step(
+                  title: const Text('Categorias de ganado ovino'),
+                  content: Column(
+                    children: [
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2, child: Text('Macho')),
+                              SizedBox(
+                                width: 120,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Corriedale',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 80,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Hampshire brown',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 90,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Criollo',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Otra raza',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Otras',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Total',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2, child: Text('Hembra')),
+                              SizedBox(
+                                width: 120,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Corriedale',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 80,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Hampshire brown',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 90,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Criollo',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Otra raza',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Otras',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Total',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //TODO: btn
+                ),
+
+                //! 11 Animales menores
+                Step(
+                  title: const Text('Animales menores'),
+                  content: Column(
+                    children: [
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text('Pollos de engorde')),
+                              SizedBox(
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Total',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2, child: Text('Gallinas')),
+                              SizedBox(
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Total',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2, child: Text('Porcinos')),
+                              SizedBox(
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Total',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2, child: Text('Llamas')),
+                              SizedBox(
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Total',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2, child: Text('Alpacas')),
+                              SizedBox(
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Total',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2, child: Text('Caprinos')),
+                              SizedBox(
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Total',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2, child: Text('Cuyes')),
+                              SizedBox(
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: 'Total',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //TODO: btn
+                ),
+
+                //! condiciones de ordeño
+                Step(
+                  title: const Text('condiciones de ordeño'),
+                  content: Column(
+                    children: [
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '9.1.¿ En su hato lechero, el ordeño realiza?')),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'Manual', child: Text('Manual')),
+                                  DropdownMenuItem(
+                                      value: 'Ordeñadora Mecanica',
+                                      child: Text('Ordeñadora Mecanica')),
+                                  DropdownMenuItem(
+                                      value: 'Mixto', child: Text('Mixto')),
+                                ],
+                                onChanged: (value) {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '9.2.¿En el ordeño, La leche es envasado?')),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'Valde de plastico',
+                                      child: Text('Valde de plastico')),
+                                  DropdownMenuItem(
+                                      value: 'Valde de aluminio',
+                                      child: Text('Porongo  de aluminio')),
+                                  DropdownMenuItem(
+                                      value: 'Valde de acero inox',
+                                      child: Text('Valde de acero inox')),
+                                  DropdownMenuItem(
+                                      value: 'Botella de plastico',
+                                      child: Text('Botella de plastico')),
+                                  DropdownMenuItem(
+                                      value: 'Olla de acero',
+                                      child: Text('Olla de acero')),
+                                ],
+                                onChanged: (value) {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '9.3. ¿Cuáles son las condiciones de almacenamiento de la leche?')),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'Bajo sombra',
+                                      child: Text('Bajo sombra')),
+                                  DropdownMenuItem(
+                                      value: 'Refrigeradora',
+                                      child: Text('Refrigeradora')),
+                                  DropdownMenuItem(
+                                      value: 'Tanque de frio',
+                                      child: Text('Tanque de frio')),
+                                  DropdownMenuItem(
+                                      value: 'Con agua y hielo',
+                                      child: Text('Con agua y hielo')),
+                                  DropdownMenuItem(
+                                      value: 'Ollas enchaqueradas',
+                                      child: Text('Ollas enchaqueradas')),
+                                  DropdownMenuItem(
+                                      value: 'Otro', child: Text('Otro')),
+                                ],
+                                onChanged: (value) {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //TODO: btn
+                ),
+
+                Step(
+                  title: const Text('Tipo de reproducción'),
+                  content: Column(
+                    children: [
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text('Tipo de reproducción')),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'Monta natural ',
+                                      child: Text('Monta natural ')),
+                                  DropdownMenuItem(
+                                      value: 'Iseminacion artificil',
+                                      child: Text('Iseminacion artificil')),
+                                  DropdownMenuItem(
+                                      value: 'Transferencia de embriones',
+                                      child:
+                                          Text('Transferencia de embriones')),
+                                ],
+                                onChanged: (value) {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text('¿Tipo de inseminador?')),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'Importados',
+                                      child: Text('Importados')),
+                                  DropdownMenuItem(
+                                      value: 'Nacional',
+                                      child: Text('Nacional')),
+                                ],
+                                onChanged: (value) {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text('¿Quiénes inseminan?')),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'privados',
+                                      child: Text('privados')),
+                                  DropdownMenuItem(
+                                      value: 'Publico', child: Text('Publico')),
+                                ],
+                                onChanged: (value) {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //TODO: btn
+                ),
+
+                //! Capacitación
+                Step(
+                  title: const Text('Capacitación'),
+                  content: Column(
+                    children: [
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Pertenece a alguna asociacion, comité o cooperativa?')),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'Si', child: Text('Si')),
+                                  DropdownMenuItem(
+                                      value: 'No', child: Text('No')),
+                                ],
+                                onChanged: (value) {},
+                              ),
+                              const SizedBox(height: 8),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText: '¿Cuál?',
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText:
+                                      '¿Cada cuanto tiempo se capacitan?',
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      'En la cadena de valor de leche ¿ De que institucion recibe capacitacion/ asistencia tecnica?')),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'ONG', child: Text('ONG')),
+                                  DropdownMenuItem(
+                                      value: 'Empresa privada',
+                                      child: Text('Empresa privada')),
+                                  DropdownMenuItem(
+                                      value: 'SENASA', child: Text('SENASA')),
+                                  DropdownMenuItem(
+                                      value: 'INIA', child: Text('INIA')),
+                                  DropdownMenuItem(
+                                      value: 'Agencia agraria',
+                                      child: Text('Agencia agraria')),
+                                  DropdownMenuItem(
+                                      value: 'Empresa minera',
+                                      child: Text('Empresa minera')),
+                                  DropdownMenuItem(
+                                      value: 'CARE', child: Text('CARE')),
+                                  DropdownMenuItem(
+                                      value: 'FONCODES',
+                                      child: Text('FONCODES')),
+                                  DropdownMenuItem(
+                                      value: 'MINAGRI', child: Text('MINAGRI')),
+                                  DropdownMenuItem(
+                                      value: 'Siembra y selva exportadora',
+                                      child:
+                                          Text('Siembra y selva exportadora')),
+                                  DropdownMenuItem(
+                                      value: 'Agrorural',
+                                      child: Text('Agrorural')),
+                                  DropdownMenuItem(
+                                      value: 'PEBLT', child: Text('PEBLT')),
+                                  DropdownMenuItem(
+                                      value: 'Direccion regional agraria',
+                                      child:
+                                          Text('Direccion regional agraria')),
+                                  DropdownMenuItem(
+                                      value: 'Proyecto pradera',
+                                      child: Text('Proyecto pradera')),
+                                  DropdownMenuItem(
+                                      value: 'Municipalidad',
+                                      child: Text('Municipalidad')),
+                                ],
+                                onChanged: (value) {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //TODO: btn
+                ),
+
+                //! opinion del productor
+                Step(
+                    title: const Text('Opinion del productor'),
+                    content: Column(
+                      children: [
+                        const SizedBox(height: 10),
+                        TextFormField(
+                          decoration: const InputDecoration(
+                            labelText:
+                                '¿Qué factores retrazan al productor agropecuario?',
+                          ),
+                        ),
+                        Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Considera que es rentable la producion  la actividad agropecuaria?')),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'Si', child: Text('Si')),
+                                  DropdownMenuItem(
+                                      value: 'No', child: Text('No')),
+                                ],
+                                onChanged: (value) {},
+                              ),
+                              const SizedBox(height: 8),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText: '¿Por qué?',
+                                ),
+                              ),
+
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Le gustaria que sus predesesores continuen con la actividad agropecuaria?')),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'Si', child: Text('Si')),
+                                  DropdownMenuItem(
+                                      value: 'No', child: Text('No')),
+                                ],
+                                onChanged: (value) {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      'FIRMA Y HUELLA DEL PRODUCTOR')),
+                              TextFormField(),
+                            ],
+                          ),
+                        ),
+                      ),
                       ],
-                    ), 
-                    //TODO: btn
-                    ),
+                    ))
               ],
             ))
           ],

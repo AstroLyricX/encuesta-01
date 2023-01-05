@@ -48,11 +48,14 @@ class _InputDatosEconomicosScreenState
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
                         fontSize: 16)),
-          
-                // CheckboxListTile(title: const Text('Agropecuaria'), value: agropecuaria, onChanged: (value) => setState(() {
-                //   agropecuaria = value ?? true;
-                // }),),
-          
+
+                CheckboxListTile(
+                  title: const Text('Agropecuaria'), 
+                  value: agropecuaria, 
+                  onChanged: (value) => setState(() {
+                  agropecuaria = value ?? true;
+                }),),
+
                 SwitchListTile.adaptive(
                   title: const Text('Agropecuaria'),
                   value: agropecuaria,
@@ -95,9 +98,9 @@ class _InputDatosEconomicosScreenState
                     otros = value;
                   }),
                 ),
-          
+
                 const SizedBox(height: 10),
-          
+
                 const Text('Ingreso Total:',
                     style: TextStyle(
                         color: Colors.black,
@@ -124,9 +127,9 @@ class _InputDatosEconomicosScreenState
                     maximo = value;
                   }),
                 ),
-          
+
                 const SizedBox(height: 10),
-          
+
                 const Text('Servicios Básicos:',
                     style: TextStyle(
                         color: Colors.black,
@@ -153,9 +156,9 @@ class _InputDatosEconomicosScreenState
                     internet = value;
                   }),
                 ),
-          
+
                 const SizedBox(height: 10),
-          
+
                 const Text('Tipo de Material de Construcción de La Vivienda:',
                     style: TextStyle(
                         color: Colors.black,
@@ -182,18 +185,21 @@ class _InputDatosEconomicosScreenState
                     hormigonCementoLadrillos = value;
                   }),
                 ),
-          
+
                 const SizedBox(height: 10),
-          
+
                 ElevatedButton(
                   child: const SizedBox(
                       width: double.infinity,
                       child: Center(child: Text('Siguiente'))),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const PisoForrajeroScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PisoForrajeroScreen()));
                   },
                 ),
-          
+
                 const SizedBox(height: 15),
               ],
             ),
