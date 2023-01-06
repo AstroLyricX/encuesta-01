@@ -226,7 +226,7 @@ class _StepperScreenState extends State<StepperScreen> {
                         child: Container(
                           margin: const EdgeInsets.all(8),
                           child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
+                            alignment: WrapAlignment.spaceAround,
                             spacing: 10,
                             children: [
                               const Center(
@@ -234,18 +234,22 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child: Text('2.1. Has bajo riego')),
                               SizedBox(
                                   width: 120,
+                                  height: 60,
                                   child: TextFormField(
                                     decoration: const InputDecoration(
                                         labelText: '¿Cuantos?'),
                                   )),
                               SizedBox(
-                                width: 160,
-                                child: SwitchListTile.adaptive(
-                                  title: const Text('No, Si'),
-                                  value: true,
-                                  onChanged: (value) => setState(() {
-                                    value = false;
-                                  }),
+                                width: 110,
+                                height: 61,
+                                child: DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
                               ),
                             ],
@@ -261,7 +265,7 @@ class _StepperScreenState extends State<StepperScreen> {
                         child: Container(
                           margin: const EdgeInsets.all(8),
                           child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
+                            alignment: WrapAlignment.spaceAround,
                             spacing: 10,
                             children: [
                               const Center(
@@ -269,18 +273,22 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child: Text('2.2. Has en secano')),
                               SizedBox(
                                   width: 120,
+                                  height: 61,
                                   child: TextFormField(
                                     decoration: const InputDecoration(
                                         labelText: '¿Cuantos?'),
                                   )),
                               SizedBox(
-                                width: 160,
-                                child: SwitchListTile.adaptive(
-                                  title: const Text('No, Si'),
-                                  value: false,
-                                  onChanged: (value) => setState(() {
-                                    value = false;
-                                  }),
+                                width: 110,
+                                height: 59.7,
+                                child: DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
                               ),
                             ],
@@ -296,7 +304,7 @@ class _StepperScreenState extends State<StepperScreen> {
                         child: Container(
                           margin: const EdgeInsets.all(8),
                           child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
+                            alignment: WrapAlignment.spaceAround,
                             spacing: 10,
                             children: [
                               const Center(
@@ -304,18 +312,22 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child: Text('2.3. propiedad o arrendadas')),
                               SizedBox(
                                   width: 120,
+                                  height: 61,
                                   child: TextFormField(
                                     decoration: const InputDecoration(
                                         labelText: '¿Cuantos?'),
                                   )),
                               SizedBox(
-                                width: 160,
-                                child: SwitchListTile.adaptive(
-                                  title: const Text('No, Si'),
-                                  value: false,
-                                  onChanged: (value) => setState(() {
-                                    value = false;
-                                  }),
+                                width: 110,
+                                height: 59.7,
+                                child: DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
                               ),
                             ],
@@ -331,7 +343,7 @@ class _StepperScreenState extends State<StepperScreen> {
                         child: Container(
                           margin: const EdgeInsets.all(8),
                           child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
+                            alignment: WrapAlignment.spaceAround,
                             spacing: 10,
                             children: [
                               const Center(
@@ -339,18 +351,22 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child: Text('2.4. Has de alfalfa')),
                               SizedBox(
                                   width: 120,
+                                  height: 61,
                                   child: TextFormField(
                                     decoration: const InputDecoration(
                                         labelText: '¿Cuantos?'),
                                   )),
                               SizedBox(
-                                width: 160,
-                                child: SwitchListTile.adaptive(
-                                  title: const Text('No, Si'),
-                                  value: false,
-                                  onChanged: (value) => setState(() {
-                                    value = false;
-                                  }),
+                                width: 110,
+                                height: 59.7,
+                                child: DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
                               ),
                             ],
@@ -366,7 +382,7 @@ class _StepperScreenState extends State<StepperScreen> {
                         child: Container(
                           margin: const EdgeInsets.all(8),
                           child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
+                            alignment: WrapAlignment.spaceAround,
                             spacing: 10,
                             children: [
                               const Center(
@@ -374,18 +390,22 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child: Text('2.5. Has de  rye grass')),
                               SizedBox(
                                   width: 120,
+                                  height: 61,
                                   child: TextFormField(
                                     decoration: const InputDecoration(
                                         labelText: '¿Cuantos?'),
                                   )),
                               SizedBox(
-                                width: 160,
-                                child: SwitchListTile.adaptive(
-                                  title: const Text('No, Si'),
-                                  value: false,
-                                  onChanged: (value) => setState(() {
-                                    value = false;
-                                  }),
+                                width: 110,
+                                height: 59.7,
+                                child: DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
                               ),
                             ],
@@ -401,7 +421,7 @@ class _StepperScreenState extends State<StepperScreen> {
                         child: Container(
                           margin: const EdgeInsets.all(8),
                           child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
+                            alignment: WrapAlignment.spaceAround,
                             spacing: 10,
                             children: [
                               const Center(
@@ -409,18 +429,22 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child: Text('2.6.Has de  avena forrajera ')),
                               SizedBox(
                                   width: 120,
+                                  height: 61,
                                   child: TextFormField(
                                     decoration: const InputDecoration(
                                         labelText: '¿Cuantos?'),
                                   )),
                               SizedBox(
-                                width: 160,
-                                child: SwitchListTile.adaptive(
-                                  title: const Text('No, Si'),
-                                  value: false,
-                                  onChanged: (value) => setState(() {
-                                    value = false;
-                                  }),
+                                width: 110,
+                                height: 59.7,
+                                child: DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
                               ),
                             ],
@@ -436,7 +460,7 @@ class _StepperScreenState extends State<StepperScreen> {
                         child: Container(
                           margin: const EdgeInsets.all(8),
                           child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
+                            alignment: WrapAlignment.spaceAround,
                             spacing: 10,
                             children: [
                               const Center(
@@ -444,18 +468,22 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child: Text('2.7. Has de cebada forrajera')),
                               SizedBox(
                                   width: 120,
+                                  height: 61,
                                   child: TextFormField(
                                     decoration: const InputDecoration(
                                         labelText: '¿Cuantos?'),
                                   )),
                               SizedBox(
-                                width: 160,
-                                child: SwitchListTile.adaptive(
-                                  title: const Text('No, Si'),
-                                  value: false,
-                                  onChanged: (value) => setState(() {
-                                    value = false;
-                                  }),
+                                width: 110,
+                                height: 59.7,
+                                child: DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
                               ),
                             ],
@@ -471,7 +499,7 @@ class _StepperScreenState extends State<StepperScreen> {
                         child: Container(
                           margin: const EdgeInsets.all(8),
                           child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
+                            alignment: WrapAlignment.spaceAround,
                             spacing: 10,
                             children: [
                               const Center(
@@ -480,18 +508,22 @@ class _StepperScreenState extends State<StepperScreen> {
                                       Text('2.8. has de  pastos naturales?')),
                               SizedBox(
                                   width: 120,
+                                  height: 61,
                                   child: TextFormField(
                                     decoration: const InputDecoration(
                                         labelText: '¿Cuantos?'),
                                   )),
                               SizedBox(
-                                width: 160,
-                                child: SwitchListTile.adaptive(
-                                  title: const Text('No, Si'),
-                                  value: false,
-                                  onChanged: (value) => setState(() {
-                                    value = false;
-                                  }),
+                                width: 110,
+                                height: 59.7,
+                                child: DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
                               ),
                             ],
@@ -507,7 +539,7 @@ class _StepperScreenState extends State<StepperScreen> {
                         child: Container(
                           margin: const EdgeInsets.all(8),
                           child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
+                            alignment: WrapAlignment.spaceAround,
                             spacing: 10,
                             children: [
                               const Center(
@@ -515,18 +547,22 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child: Text('2.9. total de hectareas')),
                               SizedBox(
                                   width: 120,
+                                  height: 61,
                                   child: TextFormField(
                                     decoration: const InputDecoration(
                                         labelText: '¿Cuantos?'),
                                   )),
                               SizedBox(
-                                width: 160,
-                                child: SwitchListTile.adaptive(
-                                  title: const Text('No, Si'),
-                                  value: false,
-                                  onChanged: (value) => setState(() {
-                                    value = false;
-                                  }),
+                                width: 110,
+                                height: 59.7,
+                                child: DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
                               ),
                             ],
@@ -542,7 +578,7 @@ class _StepperScreenState extends State<StepperScreen> {
                         child: Container(
                           margin: const EdgeInsets.all(8),
                           child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
+                            alignment: WrapAlignment.spaceAround,
                             spacing: 10,
                             children: [
                               const Center(
@@ -585,15 +621,14 @@ class _StepperScreenState extends State<StepperScreen> {
                                 const Center(
                                     heightFactor: 2,
                                     child: Text('3.1. ¿Tiene riego?')),
-                                SizedBox(
-                                  width: 160,
-                                  child: SwitchListTile.adaptive(
-                                    title: const Text('No, Si'),
-                                    value: false,
-                                    onChanged: (value) => setState(() {
-                                      value = false;
-                                    }),
-                                  ),
+                                DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
                               ],
                             ),
@@ -689,15 +724,14 @@ class _StepperScreenState extends State<StepperScreen> {
                                     heightFactor: 2,
                                     child: Text(
                                         '3.4. ¿Considera usted que el agua de riego esta contaminada?')),
-                                SizedBox(
-                                  width: 160,
-                                  child: SwitchListTile.adaptive(
-                                    title: const Text('No, Si'),
-                                    value: true,
-                                    onChanged: (value) => setState(() {
-                                      value = false;
-                                    }),
-                                  ),
+                                DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
                                 CheckboxListTile(
                                   title: const Text(
@@ -742,16 +776,16 @@ class _StepperScreenState extends State<StepperScreen> {
                                     heightFactor: 2,
                                     child: Text(
                                         '¿Pertenece usted a alguna comisión de regantes?')),
-                                SizedBox(
-                                  width: 160,
-                                  child: SwitchListTile.adaptive(
-                                    title: const Text('No, Si'),
-                                    value: true,
-                                    onChanged: (value) => setState(() {
-                                      value = false;
-                                    }),
-                                  ),
+                                DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
+                                const SizedBox(height: 7),
                                 TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: '¿Cuál?',
@@ -1447,15 +1481,14 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text(
                                       '¿Tiene usted acceso a creditos para el financiamiento de su unidad productiva?')),
-                              SizedBox(
-                                width: 160,
-                                child: SwitchListTile.adaptive(
-                                  title: const Text('No, Si'),
-                                  value: true,
-                                  onChanged: (value) => setState(() {
-                                    value = false;
-                                  }),
-                                ),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'Si', child: Text('Si')),
+                                  DropdownMenuItem(
+                                      value: 'No', child: Text('No')),
+                                ],
+                                onChanged: (value) {},
                               ),
                             ],
                           ),
@@ -1569,16 +1602,16 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text(
                                       '¿Usted  y su organización  han tenido  acceso a financiamiento de su plan de negocios o proyecto por?')),
-                              SizedBox(
-                                width: 160,
-                                child: SwitchListTile.adaptive(
-                                  title: const Text('No, Si'),
-                                  value: true,
-                                  onChanged: (value) => setState(() {
-                                    value = false;
-                                  }),
-                                ),
+                              DropdownButtonFormField(
+                                items: const [
+                                  DropdownMenuItem(
+                                      value: 'Si', child: Text('Si')),
+                                  DropdownMenuItem(
+                                      value: 'No', child: Text('No')),
+                                ],
+                                onChanged: (value) {},
                               ),
+                              const SizedBox(height: 7),
                               DropdownButtonFormField(
                                 items: const [
                                   DropdownMenuItem(
@@ -1674,6 +1707,7 @@ class _StepperScreenState extends State<StepperScreen> {
                               SizedBox(
                                 width: 100,
                                 child: TextFormField(
+                                  initialValue: '${9}',
                                   decoration: const InputDecoration(
                                     labelText: 'Toltal',
                                   ),
@@ -2177,7 +2211,6 @@ class _StepperScreenState extends State<StepperScreen> {
                   ),
                   //TODO: btn
                 ),
-
                 //! 11 Animales menores
                 Step(
                   title: const Text('Animales menores'),
@@ -2706,88 +2739,87 @@ class _StepperScreenState extends State<StepperScreen> {
                           ),
                         ),
                         Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        elevation: 5,
-                        child: Container(
-                          margin: const EdgeInsets.all(8),
-                          child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
-                            spacing: 10,
-                            children: [
-                              const Center(
-                                  heightFactor: 2,
-                                  child: Text(
-                                      '¿Considera que es rentable la producion  la actividad agropecuaria?')),
-                              DropdownButtonFormField(
-                                items: const [
-                                  DropdownMenuItem(
-                                      value: 'Si', child: Text('Si')),
-                                  DropdownMenuItem(
-                                      value: 'No', child: Text('No')),
-                                ],
-                                onChanged: (value) {},
-                              ),
-                              const SizedBox(height: 8),
-                              TextFormField(
-                                decoration: const InputDecoration(
-                                  labelText: '¿Por qué?',
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          elevation: 5,
+                          child: Container(
+                            margin: const EdgeInsets.all(8),
+                            child: Wrap(
+                              alignment: WrapAlignment.spaceBetween,
+                              spacing: 10,
+                              children: [
+                                const Center(
+                                    heightFactor: 2,
+                                    child: Text(
+                                        '¿Considera que es rentable la producion  la actividad agropecuaria?')),
+                                DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
                                 ),
-                              ),
-
-                            ],
+                                const SizedBox(height: 8),
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                    labelText: '¿Por qué?',
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        elevation: 5,
-                        child: Container(
-                          margin: const EdgeInsets.all(8),
-                          child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
-                            spacing: 10,
-                            children: [
-                              const Center(
-                                  heightFactor: 2,
-                                  child: Text(
-                                      '¿Le gustaria que sus predesesores continuen con la actividad agropecuaria?')),
-                              DropdownButtonFormField(
-                                items: const [
-                                  DropdownMenuItem(
-                                      value: 'Si', child: Text('Si')),
-                                  DropdownMenuItem(
-                                      value: 'No', child: Text('No')),
-                                ],
-                                onChanged: (value) {},
-                              ),
-                            ],
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          elevation: 5,
+                          child: Container(
+                            margin: const EdgeInsets.all(8),
+                            child: Wrap(
+                              alignment: WrapAlignment.spaceBetween,
+                              spacing: 10,
+                              children: [
+                                const Center(
+                                    heightFactor: 2,
+                                    child: Text(
+                                        '¿Le gustaria que sus predesesores continuen con la actividad agropecuaria?')),
+                                DropdownButtonFormField(
+                                  items: const [
+                                    DropdownMenuItem(
+                                        value: 'Si', child: Text('Si')),
+                                    DropdownMenuItem(
+                                        value: 'No', child: Text('No')),
+                                  ],
+                                  onChanged: (value) {},
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        elevation: 5,
-                        child: Container(
-                          margin: const EdgeInsets.all(8),
-                          child: Wrap(
-                            alignment: WrapAlignment.spaceBetween,
-                            spacing: 10,
-                            children: [
-                              const Center(
-                                  heightFactor: 2,
-                                  child: Text(
-                                      'FIRMA Y HUELLA DEL PRODUCTOR')),
-                              TextFormField(),
-                            ],
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          elevation: 5,
+                          child: Container(
+                            margin: const EdgeInsets.all(8),
+                            child: Wrap(
+                              alignment: WrapAlignment.spaceBetween,
+                              spacing: 10,
+                              children: [
+                                const Center(
+                                    heightFactor: 2,
+                                    child:
+                                        Text('FIRMA Y HUELLA DEL PRODUCTOR')),
+                                TextFormField(),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
                       ],
                     ))
               ],
