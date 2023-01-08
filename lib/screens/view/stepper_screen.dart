@@ -33,6 +33,7 @@ class _StepperScreenState extends State<StepperScreen> {
               onStepContinue: continued,
               onStepCancel: cancel,
               steps: [
+                //! 1 Datos personales
                 Step(
                   title: const Text('Datos personales'),
                   content: Column(
@@ -111,6 +112,7 @@ class _StepperScreenState extends State<StepperScreen> {
                       ? StepState.complete
                       : StepState.disabled,
                 ),
+                //! 2 Datos economicas
                 Step(
                   title: const Text('Datos economicas'),
                   content: Column(
@@ -120,26 +122,50 @@ class _StepperScreenState extends State<StepperScreen> {
                               color: Colors.black,
                               fontWeight: FontWeight.w500,
                               fontSize: 14)),
-                      DropdownButtonFormField(
-                        items: const [
-                          DropdownMenuItem(
-                              value: 'Agropecuaria',
-                              child: Text('Agropecuaria')),
-                          DropdownMenuItem(
-                              value: 'Construcción',
-                              child: Text('Construcción')),
-                          DropdownMenuItem(
-                              value: 'Transporte y comunicaciones',
-                              child: Text('Transporte y comunicaciones')),
-                          DropdownMenuItem(
-                              value: 'Minería', child: Text('Minería')),
-                          DropdownMenuItem(
-                              value: 'Comercio', child: Text('Comercio')),
-                          DropdownMenuItem(
-                              value: 'Otros', child: Text('Otros')),
-                        ],
-                        onChanged: (value) {},
+                      //?update-01
+                      CheckboxListTile(
+                        title: const Text('Agropecuaria'),
+                        value: true,
+                        onChanged: (value) => setState(() {
+                          value = true;
+                        }),
                       ),
+                      CheckboxListTile(
+                        title: const Text('Construcción'),
+                        value: true,
+                        onChanged: (value) => setState(() {
+                          value = true;
+                        }),
+                      ),
+                      CheckboxListTile(
+                        title: const Text('Transporte y comunicaciones'),
+                        value: true,
+                        onChanged: (value) => setState(() {
+                          value = true;
+                        }),
+                      ),
+                      CheckboxListTile(
+                        title: const Text('Minería'),
+                        value: true,
+                        onChanged: (value) => setState(() {
+                          value = true;
+                        }),
+                      ),
+                      CheckboxListTile(
+                        title: const Text('Comercio'),
+                        value: true,
+                        onChanged: (value) => setState(() {
+                          value = true;
+                        }),
+                      ),
+                      CheckboxListTile(
+                        title: const Text('Otros'),
+                        value: true,
+                        onChanged: (value) => setState(() {
+                          value = true;
+                        }),
+                      ),
+                      //? update-end
                       const SizedBox(height: 12),
                       const Text('Ingreso Total',
                           style: TextStyle(
@@ -212,12 +238,11 @@ class _StepperScreenState extends State<StepperScreen> {
                       ? StepState.complete
                       : StepState.disabled,
                 ),
+                //! 3 Piso Forrajero
                 Step(
                   title: const Text('Piso Forrajero'),
                   content: Column(
                     children: [
-                      const Text(
-                          '¿Tiene Capacidad de Incrementar la Superficie Instalada?'),
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -233,30 +258,25 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('2.1. Has bajo riego')),
                               SizedBox(
-                                  width: 120,
-                                  height: 60,
                                   child: TextFormField(
-                                    decoration: const InputDecoration(
-                                        labelText: '¿Cuantos?'),
-                                  )),
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Tiene capacidad de incrementar la superficie instalada?')),
                               SizedBox(
-                                width: 110,
-                                height: 61,
-                                child: DropdownButtonFormField(
-                                  items: const [
-                                    DropdownMenuItem(
-                                        value: 'Si', child: Text('Si')),
-                                    DropdownMenuItem(
-                                        value: 'No', child: Text('No')),
-                                  ],
-                                  onChanged: (value) {},
-                                ),
-                              ),
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
                             ],
                           ),
                         ),
                       ),
-
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -272,30 +292,25 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('2.2. Has en secano')),
                               SizedBox(
-                                  width: 120,
-                                  height: 61,
                                   child: TextFormField(
-                                    decoration: const InputDecoration(
-                                        labelText: '¿Cuantos?'),
-                                  )),
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Tiene capacidad de incrementar la superficie instalada?')),
                               SizedBox(
-                                width: 110,
-                                height: 59.7,
-                                child: DropdownButtonFormField(
-                                  items: const [
-                                    DropdownMenuItem(
-                                        value: 'Si', child: Text('Si')),
-                                    DropdownMenuItem(
-                                        value: 'No', child: Text('No')),
-                                  ],
-                                  onChanged: (value) {},
-                                ),
-                              ),
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
                             ],
                           ),
                         ),
                       ),
-
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -311,30 +326,25 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('2.3. propiedad o arrendadas')),
                               SizedBox(
-                                  width: 120,
-                                  height: 61,
                                   child: TextFormField(
-                                    decoration: const InputDecoration(
-                                        labelText: '¿Cuantos?'),
-                                  )),
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Tiene capacidad de incrementar la superficie instalada?')),
                               SizedBox(
-                                width: 110,
-                                height: 59.7,
-                                child: DropdownButtonFormField(
-                                  items: const [
-                                    DropdownMenuItem(
-                                        value: 'Si', child: Text('Si')),
-                                    DropdownMenuItem(
-                                        value: 'No', child: Text('No')),
-                                  ],
-                                  onChanged: (value) {},
-                                ),
-                              ),
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
                             ],
                           ),
                         ),
                       ),
-
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -350,30 +360,25 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('2.4. Has de alfalfa')),
                               SizedBox(
-                                  width: 120,
-                                  height: 61,
                                   child: TextFormField(
-                                    decoration: const InputDecoration(
-                                        labelText: '¿Cuantos?'),
-                                  )),
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Tiene capacidad de incrementar la superficie instalada?')),
                               SizedBox(
-                                width: 110,
-                                height: 59.7,
-                                child: DropdownButtonFormField(
-                                  items: const [
-                                    DropdownMenuItem(
-                                        value: 'Si', child: Text('Si')),
-                                    DropdownMenuItem(
-                                        value: 'No', child: Text('No')),
-                                  ],
-                                  onChanged: (value) {},
-                                ),
-                              ),
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
                             ],
                           ),
                         ),
                       ),
-
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -389,30 +394,25 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('2.5. Has de  rye grass')),
                               SizedBox(
-                                  width: 120,
-                                  height: 61,
                                   child: TextFormField(
-                                    decoration: const InputDecoration(
-                                        labelText: '¿Cuantos?'),
-                                  )),
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Tiene capacidad de incrementar la superficie instalada?')),
                               SizedBox(
-                                width: 110,
-                                height: 59.7,
-                                child: DropdownButtonFormField(
-                                  items: const [
-                                    DropdownMenuItem(
-                                        value: 'Si', child: Text('Si')),
-                                    DropdownMenuItem(
-                                        value: 'No', child: Text('No')),
-                                  ],
-                                  onChanged: (value) {},
-                                ),
-                              ),
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
                             ],
                           ),
                         ),
                       ),
-
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -428,30 +428,25 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('2.6.Has de  avena forrajera ')),
                               SizedBox(
-                                  width: 120,
-                                  height: 61,
                                   child: TextFormField(
-                                    decoration: const InputDecoration(
-                                        labelText: '¿Cuantos?'),
-                                  )),
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Tiene capacidad de incrementar la superficie instalada?')),
                               SizedBox(
-                                width: 110,
-                                height: 59.7,
-                                child: DropdownButtonFormField(
-                                  items: const [
-                                    DropdownMenuItem(
-                                        value: 'Si', child: Text('Si')),
-                                    DropdownMenuItem(
-                                        value: 'No', child: Text('No')),
-                                  ],
-                                  onChanged: (value) {},
-                                ),
-                              ),
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
                             ],
                           ),
                         ),
                       ),
-
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -467,30 +462,25 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('2.7. Has de cebada forrajera')),
                               SizedBox(
-                                  width: 120,
-                                  height: 61,
                                   child: TextFormField(
-                                    decoration: const InputDecoration(
-                                        labelText: '¿Cuantos?'),
-                                  )),
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Tiene capacidad de incrementar la superficie instalada?')),
                               SizedBox(
-                                width: 110,
-                                height: 59.7,
-                                child: DropdownButtonFormField(
-                                  items: const [
-                                    DropdownMenuItem(
-                                        value: 'Si', child: Text('Si')),
-                                    DropdownMenuItem(
-                                        value: 'No', child: Text('No')),
-                                  ],
-                                  onChanged: (value) {},
-                                ),
-                              ),
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
                             ],
                           ),
                         ),
                       ),
-
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -507,30 +497,25 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child:
                                       Text('2.8. has de  pastos naturales?')),
                               SizedBox(
-                                  width: 120,
-                                  height: 61,
                                   child: TextFormField(
-                                    decoration: const InputDecoration(
-                                        labelText: '¿Cuantos?'),
-                                  )),
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Tiene capacidad de incrementar la superficie instalada?')),
                               SizedBox(
-                                width: 110,
-                                height: 59.7,
-                                child: DropdownButtonFormField(
-                                  items: const [
-                                    DropdownMenuItem(
-                                        value: 'Si', child: Text('Si')),
-                                    DropdownMenuItem(
-                                        value: 'No', child: Text('No')),
-                                  ],
-                                  onChanged: (value) {},
-                                ),
-                              ),
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
                             ],
                           ),
                         ),
                       ),
-
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -546,30 +531,25 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('2.9. total de hectareas')),
                               SizedBox(
-                                  width: 120,
-                                  height: 61,
                                   child: TextFormField(
-                                    decoration: const InputDecoration(
-                                        labelText: '¿Cuantos?'),
-                                  )),
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Tiene capacidad de incrementar la superficie instalada?')),
                               SizedBox(
-                                width: 110,
-                                height: 59.7,
-                                child: DropdownButtonFormField(
-                                  items: const [
-                                    DropdownMenuItem(
-                                        value: 'Si', child: Text('Si')),
-                                    DropdownMenuItem(
-                                        value: 'No', child: Text('No')),
-                                  ],
-                                  onChanged: (value) {},
-                                ),
-                              ),
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: '¿Cuantos?'),
+                              )),
+                              //? update-0
                             ],
                           ),
                         ),
                       ),
-
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -594,8 +574,59 @@ class _StepperScreenState extends State<StepperScreen> {
                           ),
                         ),
                       ),
-
-                      //TODO: Consultar
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceAround,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child:
+                                      Text('2.11. Otros recursos agricolas')),
+                              SizedBox(
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: 'Papa',
+                                    hintText: '¿Cuántas has?'),
+                              )),
+                              const SizedBox(height: 7),
+                              SizedBox(
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: 'Quinua',
+                                    hintText: '¿Cuántas has?'),
+                              )),
+                              const SizedBox(height: 7),
+                              SizedBox(
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: 'Cañihua',
+                                    hintText: '¿Cuántas has?'),
+                              )),
+                              const SizedBox(height: 7),
+                              SizedBox(
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: 'Habas',
+                                    hintText: '¿Cuántas has?'),
+                              )),
+                              const SizedBox(height: 7),
+                              SizedBox(
+                                  child: TextFormField(
+                                decoration: const InputDecoration(
+                                    labelText: 'Otros',
+                                    hintText: '¿Cuántas has?'),
+                              )),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                   isActive: _currentStep >= 0,
@@ -603,6 +634,7 @@ class _StepperScreenState extends State<StepperScreen> {
                       ? StepState.complete
                       : StepState.disabled,
                 ),
+                //! 4 Acceso al Riego
                 Step(
                     title: const Text('Acceso al Riego '),
                     content: Column(
@@ -797,6 +829,7 @@ class _StepperScreenState extends State<StepperScreen> {
                         ),
                       ],
                     )),
+                //! 5 Infraestructura Agropecuaria
                 Step(
                   title: const Text('Infraestructura Agropecuaria'),
                   content: Column(
@@ -1210,6 +1243,7 @@ class _StepperScreenState extends State<StepperScreen> {
                   ),
                   //TODO: bnt
                 ),
+                //! 6 Inventario de maquinarias, equipos y herramientas
                 Step(
                   title: const Text(
                       'Inventario de maquinarias, equipos y herramientas'),
@@ -1462,6 +1496,7 @@ class _StepperScreenState extends State<StepperScreen> {
                   ),
                   //TODO: btn
                 ),
+                //! 7 Acceso a financiamiento
                 Step(
                   title: const Text('Acceso a financiamiento'),
                   content: Column(
@@ -1582,6 +1617,7 @@ class _StepperScreenState extends State<StepperScreen> {
                   ),
                   // TODO: btn
                 ),
+                //! 8 Financiamiento de proyectos y/o plan de negocio
                 Step(
                   title: const Text(
                       'Financiamiento de proyectos y/o plan de negocio'),
@@ -1673,39 +1709,38 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('Terneros(as)(menores a 1 año)')),
                               SizedBox(
-                                width: 120,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Brown Swiss',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 80,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Criollo',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 90,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Holstein',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Otra raza',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   initialValue: '${9}',
                                   decoration: const InputDecoration(
@@ -1732,39 +1767,38 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('Vaquillas (entre 1 a 2 años)')),
                               SizedBox(
-                                width: 120,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Brown Swiss',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 80,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Criollo',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 90,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Holstein',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Otra raza',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Toltal',
@@ -1791,39 +1825,38 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child: Text(
                                       'Vaquillonas (mayor 2 años / primer parto)')),
                               SizedBox(
-                                width: 120,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Brown Swiss',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 80,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Criollo',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 90,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Holstein',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Otra raza',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Toltal',
@@ -1850,39 +1883,38 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child: Text(
                                       'Toros (mayor a dos años sin castrar)')),
                               SizedBox(
-                                width: 120,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Brown Swiss',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 80,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Criollo',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 90,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Holstein',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Otra raza',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Toltal',
@@ -1908,39 +1940,38 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('Bueyes (castrados)')),
                               SizedBox(
-                                width: 120,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Brown Swiss',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 80,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Criollo',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 90,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Holstein',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Otra raza',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Toltal',
@@ -1966,39 +1997,38 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('Toretes de engorde')),
                               SizedBox(
-                                width: 120,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Brown Swiss',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 80,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Criollo',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 90,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Holstein',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Otra raza',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Toltal',
@@ -2024,39 +2054,38 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child: Text('Vacas en producción')),
                               SizedBox(
-                                width: 120,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Brown Swiss',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 80,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Criollo',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 90,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Holstein',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Otra raza',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Toltal',
@@ -2067,12 +2096,181 @@ class _StepperScreenState extends State<StepperScreen> {
                           ),
                         ),
                       ),
+                      //? add new card - 01
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Cuántos litros por dia produce la leche?')),
+                              SizedBox(
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                      labelText: 'Epoca seca',
+                                      hintText: 'L/Dia'),
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              SizedBox(
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                      labelText: 'Epoca de lluvias',
+                                      hintText: 'L/Dia'),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            // alignment: WrapAlignment.spaceBetween,
+                            spacing: 8,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Cuántas vacas tiene en produción?')),
+                              SizedBox(
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                      labelText: 'Epoca seca', hintText: 'Cbz'),
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              SizedBox(
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                      labelText: 'Epoca de lluvias',
+                                      hintText: 'Cbz'),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Cuál es el destino de la mayor parte de la produción?')),
+                              CheckboxListTile(
+                                title: const Text(
+                                    'Venta de leche al público (mercado)'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText: 'soles/L',
+                                ),
+                              ),
+                              CheckboxListTile(
+                                title: const Text(
+                                    'Venta de leche a plantas queseras'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText: 'soles/L',
+                                ),
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Venta a leche gloria'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText: 'soles/L',
+                                ),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Autoconsumo'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                                height: 10,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Auto insumo'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                                height: 10,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Venta de toros'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                                height: 10,
+                              ),
+                              const SizedBox(height: 10),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText:
+                                      '¿Cuál es el nombre de la planta quesera?',
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      //? add new card - end
                     ],
                   ),
                   //TODO: btn
                 ),
 
-                //! categorias de ganado ovino
+                //! 10 categorias de ganado ovino
                 Step(
                   title: const Text('Categorias de ganado ovino'),
                   content: Column(
@@ -2091,47 +2289,46 @@ class _StepperScreenState extends State<StepperScreen> {
                               const Center(
                                   heightFactor: 2, child: Text('Macho')),
                               SizedBox(
-                                width: 120,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Corriedale',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 8),
                               SizedBox(
-                                width: 80,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Hampshire brown',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 8),
                               SizedBox(
-                                width: 90,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Criollo',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 8),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Otra raza',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 8),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Otras',
                                   ),
                                 ),
                               ),
+                               const SizedBox(height: 8),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Total',
@@ -2156,47 +2353,46 @@ class _StepperScreenState extends State<StepperScreen> {
                               const Center(
                                   heightFactor: 2, child: Text('Hembra')),
                               SizedBox(
-                                width: 120,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Corriedale',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 80,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Hampshire brown',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 90,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Criollo',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Otra raza',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Otras',
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 7),
                               SizedBox(
-                                width: 100,
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     labelText: 'Total',
@@ -2207,10 +2403,80 @@ class _StepperScreenState extends State<StepperScreen> {
                           ),
                         ),
                       ),
+                      //? add new card - 02
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Cuál es el destino de la mayor parte de la produción?')),
+                              CheckboxListTile(
+                                title: const Text(
+                                    'Venta al público (mercado)'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText: 'soles',
+                                ),
+                              ),
+                              CheckboxListTile(
+                                title: const Text(
+                                    'Venta a carniceros'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText: 'soles',
+                                ),
+                              ),
+                              CheckboxListTile(
+                                title: const Text('otros'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText: 'soles',
+                                ),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Autoconsumo'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      //? add new card - end
                     ],
                   ),
                   //TODO: btn
                 ),
+
                 //! 11 Animales menores
                 Step(
                   title: const Text('Animales menores'),
@@ -2385,12 +2651,91 @@ class _StepperScreenState extends State<StepperScreen> {
                           ),
                         ),
                       ),
+                      //? add new card - 03
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: const EdgeInsets.all(8),
+                          child: Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            spacing: 10,
+                            children: [
+                              const Center(
+                                  heightFactor: 2,
+                                  child: Text(
+                                      '¿Cuál es el destino de la mayor parte de la produción?')),
+                              CheckboxListTile(
+                                title: const Text(
+                                    'Venta al público (mercado)'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText: 'soles',
+                                ),
+                              ),
+                              CheckboxListTile(
+                                title: const Text(
+                                    'Venta a carniceros'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText: 'soles',
+                                ),
+                              ),
+                              CheckboxListTile(
+                                title: const Text('otros'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              TextFormField(
+                                decoration: const InputDecoration(
+                                  labelText: 'soles',
+                                ),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Autoconsumo'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Auto insumo'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      //? add new card - end
                     ],
                   ),
                   //TODO: btn
                 ),
 
-                //! condiciones de ordeño
+                //! 12  condiciones de ordeño
                 Step(
                   title: const Text('condiciones de ordeño'),
                   content: Column(
@@ -2511,6 +2856,7 @@ class _StepperScreenState extends State<StepperScreen> {
                   //TODO: btn
                 ),
 
+                //! 13 Tipo de reproducción
                 Step(
                   title: const Text('Tipo de reproducción'),
                   content: Column(
@@ -2610,7 +2956,7 @@ class _StepperScreenState extends State<StepperScreen> {
                   //TODO: btn
                 ),
 
-                //! Capacitación
+                //! 14 Capacitación
                 Step(
                   title: const Text('Capacitación'),
                   content: Column(
@@ -2726,7 +3072,7 @@ class _StepperScreenState extends State<StepperScreen> {
                   //TODO: btn
                 ),
 
-                //! opinion del productor
+                //! 15 opinion del productor
                 Step(
                     title: const Text('Opinion del productor'),
                     content: Column(
