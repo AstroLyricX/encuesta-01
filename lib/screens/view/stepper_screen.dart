@@ -1635,28 +1635,59 @@ class _StepperScreenState extends State<StepperScreen> {
                                   heightFactor: 2,
                                   child:
                                       Text('¿Para que solicito el credito?')),
-                              DropdownButtonFormField(
-                                items: const [
-                                  DropdownMenuItem(
-                                      value: 'Adquisicion de insumos',
-                                      child: Text('Adquisicion de insumos')),
-                                  DropdownMenuItem(
-                                      value: 'Adquisicion de maquinarias',
-                                      child:
-                                          Text('Adquisicion de maquinarias')),
-                                  DropdownMenuItem(
-                                      value: 'Adquisicion de ganado vacuno',
-                                      child:
-                                          Text('Adquisicion de ganado vacuno')),
-                                  DropdownMenuItem(
-                                      value: 'Para pagar otros creditos',
-                                      child:
-                                          Text('Para pagar otros creditos ')),
-                                  DropdownMenuItem(
-                                      value: 'Otros', child: Text('Otros')),
-                                ],
-                                onChanged: (value) {},
+                              //? update start
+                              const Divider(
+                                color: Colors.blueGrey,
                               ),
+                              CheckboxListTile(
+                                title: const Text('Adquisicion de insumos'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Adquisicion de maquinarias'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title:
+                                    const Text('Adquisicion de ganado vacuno'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Para pagar otros creditos'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Otros'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              //? update end
                             ],
                           ),
                         ),
@@ -3251,6 +3282,7 @@ class _StepperScreenState extends State<StepperScreen> {
                             ),
                           ),
                         ),
+                        //* cam
                         Card(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
