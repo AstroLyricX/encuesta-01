@@ -1543,31 +1543,79 @@ class _StepperScreenState extends State<StepperScreen> {
                               const Center(
                                   heightFactor: 2,
                                   child: Text('Indique el nombre')),
-                              DropdownButtonFormField(
-                                items: const [
-                                  DropdownMenuItem(
-                                      value: 'Cajas municipales ',
-                                      child: Text('Cajas municipales ')),
-                                  DropdownMenuItem(
-                                      value: 'Caja rural',
-                                      child: Text('Caja rural')),
-                                  DropdownMenuItem(
-                                      value: 'Cooperativa de Ahorro y Credito',
-                                      child: Text(
-                                          'Cooperativa de Ahorro y Credito')),
-                                  DropdownMenuItem(
-                                      value: 'Banco', child: Text('Banco')),
-                                  DropdownMenuItem(
-                                      value: 'Agrobanco',
-                                      child: Text('Agrobanco')),
-                                  DropdownMenuItem(
-                                      value: 'ONG', child: Text('ONG')),
-                                  DropdownMenuItem(
-                                      value: 'Otros fondos',
-                                      child: Text('Otros fondos')),
-                                ],
-                                onChanged: (value) {},
+                              //? update start
+                              const Divider(
+                                color: Colors.blueGrey,
                               ),
+                              CheckboxListTile(
+                                title: const Text('Cajas municipales'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Caja rural'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text(
+                                    'Cooperativa de Ahorro y Credito'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Banco'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Agrobanco'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('ONG'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Otros fondos'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              //? update - end
                             ],
                           ),
                         ),
@@ -1647,40 +1695,101 @@ class _StepperScreenState extends State<StepperScreen> {
                                 ],
                                 onChanged: (value) {},
                               ),
-                              const SizedBox(height: 7),
-                              DropdownButtonFormField(
-                                items: const [
-                                  DropdownMenuItem(
-                                      value: 'Procompite nacional',
-                                      child: Text('Procompite nacional')),
-                                  DropdownMenuItem(
-                                      value: 'Procompite Gobierno Regional ',
-                                      child:
-                                          Text('Procompite Gobierno Regional')),
-                                  DropdownMenuItem(
-                                      value: 'Procompite Gobieno Municipal',
-                                      child:
-                                          Text('Procompite Gobieno Municipal')),
-                                  DropdownMenuItem(
-                                      value: 'Fondoempleo',
-                                      child: Text('Fondoempleo')),
-                                  DropdownMenuItem(
-                                      value: 'Cooperacion internacional',
-                                      child: Text('Cooperacion internacional')),
-                                  DropdownMenuItem(
-                                      value: 'Agroideas',
-                                      child: Text('Agroideas')),
-                                  DropdownMenuItem(
-                                      value: 'Empresa minera',
-                                      child: Text('Empresa minera')),
-                                  DropdownMenuItem(
-                                      value: 'Foncodes',
-                                      child: Text('Foncodes')),
-                                  DropdownMenuItem(
-                                      value: 'Otros', child: Text('Otros')),
-                                ],
-                                onChanged: (value) {},
+                              const SizedBox(height: 10),
+                              //? update start
+                              const Divider(
+                                color: Colors.blueGrey,
                               ),
+                              CheckboxListTile(
+                                title: const Text('Procompite nacional'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title:
+                                    const Text('Procompite Gobierno Regional'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title:
+                                    const Text('Procompite Gobieno Municipal'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Fondoempleo'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Cooperacion internacional'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Agroideas'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Empresa minera'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Foncodes'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              const Divider(
+                                color: Colors.blueGrey,
+                              ),
+                              CheckboxListTile(
+                                title: const Text('Otros'),
+                                value: true,
+                                onChanged: (value) => setState(() {
+                                  value = true;
+                                }),
+                              ),
+                              //? update end
                             ],
                           ),
                         ),
@@ -2327,7 +2436,7 @@ class _StepperScreenState extends State<StepperScreen> {
                                   ),
                                 ),
                               ),
-                               const SizedBox(height: 8),
+                              const SizedBox(height: 8),
                               SizedBox(
                                 child: TextFormField(
                                   decoration: const InputDecoration(
@@ -2420,8 +2529,7 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child: Text(
                                       '¿Cuál es el destino de la mayor parte de la produción?')),
                               CheckboxListTile(
-                                title: const Text(
-                                    'Venta al público (mercado)'),
+                                title: const Text('Venta al público (mercado)'),
                                 value: true,
                                 onChanged: (value) => setState(() {
                                   value = true;
@@ -2433,8 +2541,7 @@ class _StepperScreenState extends State<StepperScreen> {
                                 ),
                               ),
                               CheckboxListTile(
-                                title: const Text(
-                                    'Venta a carniceros'),
+                                title: const Text('Venta a carniceros'),
                                 value: true,
                                 onChanged: (value) => setState(() {
                                   value = true;
@@ -2668,8 +2775,7 @@ class _StepperScreenState extends State<StepperScreen> {
                                   child: Text(
                                       '¿Cuál es el destino de la mayor parte de la produción?')),
                               CheckboxListTile(
-                                title: const Text(
-                                    'Venta al público (mercado)'),
+                                title: const Text('Venta al público (mercado)'),
                                 value: true,
                                 onChanged: (value) => setState(() {
                                   value = true;
@@ -2681,8 +2787,7 @@ class _StepperScreenState extends State<StepperScreen> {
                                 ),
                               ),
                               CheckboxListTile(
-                                title: const Text(
-                                    'Venta a carniceros'),
+                                title: const Text('Venta a carniceros'),
                                 value: true,
                                 onChanged: (value) => setState(() {
                                   value = true;
