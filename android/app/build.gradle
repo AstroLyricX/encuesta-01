@@ -26,7 +26,8 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
+    // compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 33
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -47,8 +48,15 @@ android {
         applicationId "com.example.encuesta_app"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
+        // minSdkVersion localProperties.getProperty('flutter.minSdkVersion').toInteger()
+        // targetSdkVersion localProperties.getProperty('flutter.targetSdkVersion').toInteger()
+        // versionCode flutterVersionCode.toInteger()
+        // versionName flutterVersionName
+
+        // minSdkVersion flutter.minSdkVersion
+        minSdkVersion 20
+        // targetSdkVersion flutter.targetSdkVersion
+        targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }

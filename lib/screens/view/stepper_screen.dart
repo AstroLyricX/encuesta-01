@@ -1,6 +1,12 @@
-// ignore: file_names
-import 'package:encuesta_app/screens/screens.dart';
+// ignore_for_file: file_names
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
+
+import 'package:encuesta_app/screens/screens.dart';
+
+import '../../blocs/blocs.dart';
 
 class StepperScreen extends StatefulWidget {
   const StepperScreen({Key? key}) : super(key: key);
@@ -12,6 +18,9 @@ class StepperScreen extends StatefulWidget {
 class _StepperScreenState extends State<StepperScreen> {
   int _currentStep = 0;
   StepperType stepperType = StepperType.vertical;
+
+  //? camere
+  File? newPictureFile;
 
   @override
   Widget build(BuildContext context) {
@@ -3282,7 +3291,7 @@ class _StepperScreenState extends State<StepperScreen> {
                             ),
                           ),
                         ),
-                        //* cam
+                        //? camera start
                         Card(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
@@ -3296,13 +3305,91 @@ class _StepperScreenState extends State<StepperScreen> {
                               children: [
                                 const Center(
                                     heightFactor: 2,
-                                    child:
-                                        Text('FIRMA Y HUELLA DEL PRODUCTOR')),
-                                TextFormField(),
+                                    child: Text(
+                                        'FOTO DE FIRMA Y HUELLA DEL PRODUCTOR')),
+                                Center(
+                                  child: IconButton(
+                                    icon: const Icon(
+                                      Icons.camera_alt_outlined,
+                                      size: 40,
+                                      color: Colors.blueGrey,
+                                    ),
+                                    onPressed: () async {
+                                      final picker = new ImagePicker();
+                                      final PickedFile? pickedFile =
+                                          await picker.getImage(
+                                              // source: ImageSource.camera,
+                                              source: ImageSource.gallery,
+                                              imageQuality: 100);
+
+                                      if (pickedFile == null) {
+                                        print('No seleccionó nada');
+                                        return;
+                                      }
+
+                                      print(
+                                          'Tenemos imagen ${pickedFile.path}');
+
+                                      updateSelectedImg(pickedFile.path);
+                                    },
+                                  ),
+                                )
                               ],
                             ),
                           ),
                         ),
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          elevation: 5,
+                          child: Container(
+                            margin: const EdgeInsets.all(8),
+                            child: Wrap(
+                              alignment: WrapAlignment.spaceBetween,
+                              spacing: 10,
+                              children: [
+                                const Center(
+                                    heightFactor: 2,
+                                    child: Text('FOTO DEL PRODUCTOR')),
+                                Center(
+                                  child: IconButton(
+                                    icon: const Icon(
+                                      Icons.camera_alt_outlined,
+                                      size: 40,
+                                      color: Colors.blueGrey,
+                                    ),
+                                    onPressed: () {},
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        //? camera end
+                        //? gps start
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          elevation: 5,
+                          child: Container(
+                            margin: const EdgeInsets.all(8),
+                            child: Wrap(
+                              alignment: WrapAlignment.spaceBetween,
+                              spacing: 10,
+                              children: const [
+                                Center(
+                                  child: _Loading(),
+                                  // child: _AccessButton(),
+                                  // child: _EnableGpsMessage(),
+                                )
+                              ],
+                            ),
+                          ),
+                        )
+
+                        //? gps end
                       ],
                     ))
               ],
@@ -3336,4 +3423,131 @@ class _StepperScreenState extends State<StepperScreen> {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const HomeScreen()));
   }
+
+  void updateSelectedImg(String path) {
+    // this.selectedImg.picture = path;
+    this.newPictureFile = File.fromUri(Uri(path: path));
+  }
 }
+
+//? GPS Start Widget
+
+class _Loading extends StatelessWidget {
+  const _Loading({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<GpsBloc, GpsState>(
+      builder: (context, state) {
+        return state.isAllGranted ? const _MapGps() : const _GpsAcces();
+      },
+    );
+  }
+}
+
+class _MapGps extends StatefulWidget {
+  const _MapGps({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<_MapGps> createState() => _MapGpsState();
+}
+
+class _MapGpsState extends State<_MapGps> {
+
+  late LocationBloc locationBloc;
+
+
+  @override
+  void initState() {
+    super.initState();
+
+    locationBloc = BlocProvider.of<LocationBloc>(context);
+    locationBloc.startFollowingUser();
+    // locationBloc.getCurrentPosition();
+  }
+
+  @override
+  void dispose() {
+    locationBloc.stopFollowingUser();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // ignore: prefer_const_constructors
+    return BlocBuilder<LocationBloc, LocationState>(
+      builder: (context, state) {
+
+        if ( state.lastKnownLocation == null ) return const Center( child: Text('Espere por favor..'));
+
+        return Center(
+          child: Text('${state.lastKnownLocation!.latitude}, ${state.lastKnownLocation!.longitude}'),
+        );
+      },
+    );
+  }
+}
+
+class _GpsAcces extends StatelessWidget {
+  const _GpsAcces({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<GpsBloc, GpsState>(
+      builder: (context, state) {
+        // print('state: $state');
+        return !state.isGpsEnabled
+            ? const _EnableGpsMessage()
+            : const _AccessButton();
+      },
+    );
+  }
+}
+
+class _AccessButton extends StatelessWidget {
+  // ignore: sort_child_properties_last
+  const _AccessButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text('Es necesario el acceso a GPS'),
+        MaterialButton(
+            // ignore: sort_child_properties_last
+            child: const Text('Solicitar Acceso',
+                style: TextStyle(color: Colors.white)),
+            color: Colors.black,
+            shape: const StadiumBorder(),
+            elevation: 0,
+            onPressed: (() {
+              final gpsBloc = BlocProvider.of<GpsBloc>(context);
+              gpsBloc.askGpsAccess();
+            }))
+      ],
+    );
+  }
+}
+
+class _EnableGpsMessage extends StatelessWidget {
+  const _EnableGpsMessage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text('Debe de habilitar el GPS',
+        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold));
+  }
+}
+
+//? GPS End Widget
