@@ -20,6 +20,7 @@ class _StepperScreenState extends State<StepperScreen> {
   int _currentStep = 0;
   StepperType stepperType = StepperType.vertical;
 
+
   //? camere
   File? newPictureFile;
 
@@ -3481,6 +3482,7 @@ class _MapGps extends StatefulWidget {
 
 class _MapGpsState extends State<_MapGps> {
   late LocationBloc locationBloc;
+  
 
   @override
   void initState() {
@@ -3501,8 +3503,7 @@ class _MapGpsState extends State<_MapGps> {
   Widget build(BuildContext context) {
     return BlocBuilder<LocationBloc, LocationState>(
       builder: (context, state) {
-        if (state.lastKnownLocation == null)
-          return const Center(child: Text('Espere por favor..'));
+        if (state.lastKnownLocation == null) return const Center(child: Text('Espere por favor..'));
         //? copy start
         return Column(
           children: [
@@ -3531,7 +3532,21 @@ class _MapGpsState extends State<_MapGps> {
                 };
                 FlutterClipboard.copy(coordinates.toString());
               },
-            )
+            ),
+            const SizedBox(height: 10),
+            const Divider(
+              color: Colors.blueGrey,
+            ),
+            //? start input GPS
+            TextFormField(
+              initialValue: '${state.lastKnownLocation!.latitude}, ${state.lastKnownLocation!.longitude} ',
+              decoration: const InputDecoration(
+                labelText: 'Ubicación GPS del Productor',
+                prefixIcon: Icon(Icons.location_on_outlined, color: Colors.black),
+              ),
+            ),
+            //? end input GPS
+
           ],
         );
         //? copy end
