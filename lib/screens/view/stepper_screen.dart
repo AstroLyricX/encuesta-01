@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 import 'dart:io';
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
@@ -3376,20 +3377,42 @@ class _StepperScreenState extends State<StepperScreen> {
                           child: Container(
                             margin: const EdgeInsets.all(8),
                             child: Wrap(
+                                alignment: WrapAlignment.spaceBetween,
+                                spacing: 10,
+                                children: const [
+                                  Center(
+                                    child: _Loading(),
+                                    // child: _AccessButton(),
+                                    // child: _EnableGpsMessage(),
+                                  ),
+                                ]),
+                          ),
+                        ),
+                        //? gps end
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          elevation: 5,
+                          child: Container(
+                            margin: const EdgeInsets.all(8),
+                            child: Wrap(
                               alignment: WrapAlignment.spaceBetween,
                               spacing: 10,
-                              children: const [
-                                Center(
-                                  child: _Loading(),
-                                  // child: _AccessButton(),
-                                  // child: _EnableGpsMessage(),
-                                )
+                              children: [
+                                TextFormField(
+                                  decoration: const InputDecoration(
+                                      labelText: 'Ubicación GPS del productor',
+                                      prefixIcon: Icon(
+                                          Icons.location_on_outlined,
+                                          color: Colors.black)),
+                                  maxLines: 5,
+                                  minLines: 1,
+                                ),
                               ],
                             ),
                           ),
-                        )
-
-                        //? gps end
+                        ),
                       ],
                     ))
               ],
@@ -3457,9 +3480,7 @@ class _MapGps extends StatefulWidget {
 }
 
 class _MapGpsState extends State<_MapGps> {
-
   late LocationBloc locationBloc;
-
 
   @override
   void initState() {
@@ -3478,15 +3499,42 @@ class _MapGpsState extends State<_MapGps> {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
     return BlocBuilder<LocationBloc, LocationState>(
       builder: (context, state) {
-
-        if ( state.lastKnownLocation == null ) return const Center( child: Text('Espere por favor..'));
-
-        return Center(
-          child: Text('${state.lastKnownLocation!.latitude}, ${state.lastKnownLocation!.longitude}'),
+        if (state.lastKnownLocation == null)
+          return const Center(child: Text('Espere por favor..'));
+        //? copy start
+        return Column(
+          children: [
+            const Center(
+                heightFactor: 2,
+                child: Text('Ubicación GPS del Productor',
+                    style: TextStyle(
+                        color: Colors.green, fontWeight: FontWeight.bold))),
+            const Divider(
+              color: Colors.blueGrey,
+            ),
+            Center(
+              child: Text(
+                  '${state.lastKnownLocation!.latitude}, ${state.lastKnownLocation!.longitude}'),
+            ),
+            const SizedBox(height: 5),
+            const Divider(
+              color: Colors.blueGrey,
+            ),
+            IconButton(
+              icon: const Icon(Icons.copy, color: Colors.indigo, size: 30),
+              onPressed: () {
+                Map<String, double> coordinates = {
+                  "latitude": state.lastKnownLocation!.latitude,
+                  "longitude": state.lastKnownLocation!.longitude
+                };
+                FlutterClipboard.copy(coordinates.toString());
+              },
+            )
+          ],
         );
+        //? copy end
       },
     );
   }
@@ -3551,3 +3599,7 @@ class _EnableGpsMessage extends StatelessWidget {
 }
 
 //? GPS End Widget
+
+
+
+

@@ -33,7 +33,6 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
     final position = await Geolocator.getCurrentPosition();
 
     add(OnNewUserLocationEvent( LatLng( position.latitude, position.longitude ) ));
-    // return position;
   }
 
   void startFollowingUser() {
