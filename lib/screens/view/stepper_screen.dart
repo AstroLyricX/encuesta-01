@@ -21,21 +21,47 @@ class _StepperScreenState extends State<StepperScreen> {
   late LocationBloc locationBloc;
 
   //!..........
-  List<String> centrosPoblados = ['Muni Grande', 'Jasana Grande', 'Cercado Samán', 'Quejon Mocco', 'Chucaripo', 'Chacamarca'];
+  List<String> centrosPoblados = [
+    'Muni Grande',
+    'Jasana Grande',
+    'Cercado Samán',
+    'Quejon Mocco',
+    'Chucaripo',
+    'Chacamarca'
+  ];
   String centrosPobladosVista = 'Seleccione un centro poblado';
 
   String sector = 'sector';
-  List<String> sectoresMuniGrande = ['Titihuarija', 'Muni Pampa', 'Jergachi', 'Muni Salinas'];
-  List<String> sectoresJasanaGrande = ['Isla', 'Patalla', 'Carpi Pampa', 'Esquele'];
+  List<String> sectoresMuniGrande = [
+    'Titihuarija',
+    'Muni Pampa',
+    'Jergachi',
+    'Muni Salinas'
+  ];
+  List<String> sectoresJasanaGrande = [
+    'Isla',
+    'Patalla',
+    'Carpi Pampa',
+    'Esquele'
+  ];
   List<String> sectoresCercadoSaman = ['Sector'];
-  List<String> sectoresQuejonMocco = ['Kapallia', 'Llantha Mocco', 'Quejon Valle', 'Primer', 'Tambo'];
-  List<String> sectoresChucaripo = ['Catagachi', 'Litero', 'Pampa Chucaripo', 'Alto', 'Ccorpa', 'Hiruito'];
+  List<String> sectoresQuejonMocco = [
+    'Kapallia',
+    'Llantha Mocco',
+    'Quejon Valle',
+    'Primer',
+    'Tambo'
+  ];
+  List<String> sectoresChucaripo = [
+    'Catagachi',
+    'Litero',
+    'Pampa Chucaripo',
+    'Alto',
+    'Ccorpa',
+    'Hiruito'
+  ];
   List<String> sectoresChacamarca = ['Sector'];
   String sectorVista = 'Seleccione un sector';
-
-
-
-
 
   //!..........
 
@@ -47,9 +73,7 @@ class _StepperScreenState extends State<StepperScreen> {
     locationBloc.startFollowingUser();
 
     //!.............................
-    setState(() {
-
-    });
+    setState(() {});
     //!.............................
   }
 
@@ -117,52 +141,52 @@ class _StepperScreenState extends State<StepperScreen> {
                         ),
                         const SizedBox(height: 7),
                         //!........................
-                        const Text('Centro Poblado',
-                            // style: TextStyle(
-                            //     color: Colors.black,
-                            //     fontWeight: FontWeight.w500,
-                            //     fontSize: 14)
-                                ),
+                        const Text(
+                          'Centro Poblado',
+                          // style: TextStyle(
+                          //     color: Colors.black,
+                          //     fontWeight: FontWeight.w500,
+                          //     fontSize: 14)
+                        ),
                         DropdownButtonFormField(
                           items: centrosPoblados.map((String c) {
                             return DropdownMenuItem(
                               value: c,
                               child: Text(c),
-                              );
+                            );
                           }).toList(),
                           hint: Text(centrosPobladosVista),
-                          onChanged: (value) {
-                          },
+                          onChanged: (value) {},
                         ),
                         const SizedBox(height: 7),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Región',
-                          ),
+                        // TextFormField(
+                        //   decoration: const InputDecoration(
+                        //     labelText: 'Región',
+                        //   ),
+                        // ),
+                        const Text(
+                          'Sector',
                         ),
-                        const Text('Sector',),
                         DropdownButtonFormField(
                           // value:  centrosPoblados,
                           onChanged: (value) {
-                            centrosPoblados.forEach((item) => print('item: $item') );
+                            centrosPoblados
+                                .forEach((item) => print('item: $item'));
                             // item == value
                             // if (value == '')
                           },
                           items: sectoresMuniGrande.map((String s) {
-                            return DropdownMenuItem(
-                              value: s,
-                              child: Text(s)
-                              );
+                            return DropdownMenuItem(value: s, child: Text(s));
                           }).toList(),
                           hint: Text(sectorVista),
                         ),
                         const SizedBox(height: 7),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Provincia',
-                          ),
-                        ),
-                        const Text('Distrito',),
+                        // TextFormField(
+                        //   decoration: const InputDecoration(
+                        //     labelText: 'Provincia',
+                        //   ),
+                        // ),
+                        const Text('Distrito'),
                         DropdownButtonFormField(
                           items: const [
                             DropdownMenuItem(value: 'a', child: Text('A')),
@@ -172,24 +196,40 @@ class _StepperScreenState extends State<StepperScreen> {
                           onChanged: (value) {},
                         ),
                         const SizedBox(height: 7),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Distrito',
-                          ),
-                        ),
+                        // TextFormField(
+                        //   decoration: const InputDecoration(
+                        //     labelText: 'Distrito',
+                        //   ),
+                        // ),
                         //!.........................
                         const SizedBox(height: 7),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Nivel de Educación',
-                          ),
+                        //?.......... Start Update - Nivel de Educación and Genero ................
+                        const Text('Nivel de Educación'),
+                        DropdownButtonFormField(
+                          items: const [
+                            DropdownMenuItem(
+                                value: 'Sin nivel', child: Text('Sin nivel')),
+                            DropdownMenuItem(
+                                value: 'Primaria', child: Text('Primaria')),
+                            DropdownMenuItem(
+                                value: 'Secundaria', child: Text('Secundaria')),
+                            DropdownMenuItem(
+                                value: 'Superior', child: Text('Superior')),
+                          ],
+                          onChanged: (value) {},
                         ),
                         const SizedBox(height: 7),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Genero',
-                          ),
+                        const Text('Genero'),
+                        DropdownButtonFormField(
+                          items: const [
+                            DropdownMenuItem(
+                                value: 'Masculino', child: Text('Masculino')),
+                            DropdownMenuItem(
+                                value: 'Femenino', child: Text('Femenino')),
+                          ],
+                          onChanged: (value) {},
                         ),
+                        //?.......... Start Update - Nivel de Educación and Genero ................
                         const SizedBox(height: 7),
                         TextFormField(
                           decoration: const InputDecoration(
@@ -3521,8 +3561,7 @@ class _StepperScreenState extends State<StepperScreen> {
                                     controller: fieldLatitude,
                                     keyboardType: TextInputType.none,
                                     decoration: const InputDecoration(
-                                        labelText:
-                                            'Latitud',
+                                        labelText: 'Latitud',
                                         prefixIcon: Icon(
                                             Icons.add_location_alt_outlined,
                                             color: Colors.black)),
@@ -3534,27 +3573,28 @@ class _StepperScreenState extends State<StepperScreen> {
                                     controller: fieldLongitude,
                                     keyboardType: TextInputType.none,
                                     decoration: const InputDecoration(
-                                        labelText:
-                                            'Longitud',
+                                        labelText: 'Longitud',
                                         prefixIcon: Icon(
                                             Icons.add_location_outlined,
                                             color: Colors.black)),
                                     maxLines: 5,
                                     minLines: 1,
                                   ),
-                                  const Divider(
-                                    
-                                  ),
+                                  const Divider(),
                                   Center(
                                     child: ElevatedButton.icon(
-                                      style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
-                                      icon: const Icon(Icons.add_to_photos_outlined), 
-                                      label: const Text('Insertar Ubicación GPS'),
+                                      style: ElevatedButton.styleFrom(
+                                          backgroundColor: Colors.black),
+                                      icon: const Icon(
+                                          Icons.add_to_photos_outlined),
+                                      label:
+                                          const Text('Insertar Ubicación GPS'),
                                       onPressed: () {
                                         FlutterClipboard.paste().then(
                                           (value) {
                                             setState(() {
-                                              List<String> values = value.split(",");
+                                              List<String> values =
+                                                  value.split(",");
 
                                               fieldLatitude.text = values[0];
                                               latitudePaste = values[0];
@@ -3563,8 +3603,8 @@ class _StepperScreenState extends State<StepperScreen> {
                                             });
                                           },
                                         );
-                                      }, 
-                                      ),
+                                      },
+                                    ),
                                   )
                                 ],
                               ),
@@ -3660,7 +3700,8 @@ class _MapGpsState extends State<_MapGps> {
   Widget build(BuildContext context) {
     return BlocBuilder<LocationBloc, LocationState>(
       builder: (context, state) {
-        if (state.lastKnownLocation == null) return const Center(child: Text('Espere por favor..'));
+        if (state.lastKnownLocation == null)
+          return const Center(child: Text('Espere por favor..'));
         //? copy start
         return Column(
           children: [
@@ -3757,7 +3798,3 @@ class _EnableGpsMessage extends StatelessWidget {
 }
 
 //? GPS End Widget
-
-
-
-
