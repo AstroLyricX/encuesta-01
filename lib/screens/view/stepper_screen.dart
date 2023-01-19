@@ -20,13 +20,37 @@ class _StepperScreenState extends State<StepperScreen> {
 //*...........
   late LocationBloc locationBloc;
 
+  //!..........
+  List<String> centrosPoblados = ['Muni Grande', 'Jasana Grande', 'Cercado Samán', 'Quejon Mocco', 'Chucaripo', 'Chacamarca'];
+  String centrosPobladosVista = 'Seleccione un centro poblado';
+
+  String sector = 'sector';
+  List<String> sectoresMuniGrande = ['Titihuarija', 'Muni Pampa', 'Jergachi', 'Muni Salinas'];
+  List<String> sectoresJasanaGrande = ['Isla', 'Patalla', 'Carpi Pampa', 'Esquele'];
+  List<String> sectoresCercadoSaman = ['Sector'];
+  List<String> sectoresQuejonMocco = ['Kapallia', 'Llantha Mocco', 'Quejon Valle', 'Primer', 'Tambo'];
+  List<String> sectoresChucaripo = ['Catagachi', 'Litero', 'Pampa Chucaripo', 'Alto', 'Ccorpa', 'Hiruito'];
+  List<String> sectoresChacamarca = ['Sector'];
+  String sectorVista = 'Seleccione un sector';
+
+
+
+
+
+  //!..........
+
   @override
   void initState() {
     super.initState();
 
     locationBloc = BlocProvider.of<LocationBloc>(context);
     locationBloc.startFollowingUser();
-    // locationBloc.getCurrentPosition();
+
+    //!.............................
+    setState(() {
+
+    });
+    //!.............................
   }
 
   @override
@@ -92,10 +116,45 @@ class _StepperScreenState extends State<StepperScreen> {
                           ),
                         ),
                         const SizedBox(height: 7),
+                        //!........................
+                        const Text('Centro Poblado',
+                            // style: TextStyle(
+                            //     color: Colors.black,
+                            //     fontWeight: FontWeight.w500,
+                            //     fontSize: 14)
+                                ),
+                        DropdownButtonFormField(
+                          items: centrosPoblados.map((String c) {
+                            return DropdownMenuItem(
+                              value: c,
+                              child: Text(c),
+                              );
+                          }).toList(),
+                          hint: Text(centrosPobladosVista),
+                          onChanged: (value) {
+                          },
+                        ),
+                        const SizedBox(height: 7),
                         TextFormField(
                           decoration: const InputDecoration(
                             labelText: 'Región',
                           ),
+                        ),
+                        const Text('Sector',),
+                        DropdownButtonFormField(
+                          // value:  centrosPoblados,
+                          onChanged: (value) {
+                            centrosPoblados.forEach((item) => print('item: $item') );
+                            // item == value
+                            // if (value == '')
+                          },
+                          items: sectoresMuniGrande.map((String s) {
+                            return DropdownMenuItem(
+                              value: s,
+                              child: Text(s)
+                              );
+                          }).toList(),
+                          hint: Text(sectorVista),
                         ),
                         const SizedBox(height: 7),
                         TextFormField(
@@ -103,21 +162,29 @@ class _StepperScreenState extends State<StepperScreen> {
                             labelText: 'Provincia',
                           ),
                         ),
+                        const Text('Distrito',),
+                        DropdownButtonFormField(
+                          items: const [
+                            DropdownMenuItem(value: 'a', child: Text('A')),
+                            DropdownMenuItem(value: 'b', child: Text('B')),
+                            DropdownMenuItem(value: 'c', child: Text('C')),
+                          ],
+                          onChanged: (value) {},
+                        ),
                         const SizedBox(height: 7),
                         TextFormField(
                           decoration: const InputDecoration(
                             labelText: 'Distrito',
                           ),
                         ),
+                        //!.........................
                         const SizedBox(height: 7),
-                        //TODO: cambiar por un select
                         TextFormField(
                           decoration: const InputDecoration(
                             labelText: 'Nivel de Educación',
                           ),
                         ),
                         const SizedBox(height: 7),
-                        //TODO: cambiar por un select
                         TextFormField(
                           decoration: const InputDecoration(
                             labelText: 'Genero',
@@ -3475,6 +3542,9 @@ class _StepperScreenState extends State<StepperScreen> {
                                     maxLines: 5,
                                     minLines: 1,
                                   ),
+                                  const Divider(
+                                    
+                                  ),
                                   Center(
                                     child: ElevatedButton.icon(
                                       style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
@@ -3484,14 +3554,6 @@ class _StepperScreenState extends State<StepperScreen> {
                                         FlutterClipboard.paste().then(
                                           (value) {
                                             setState(() {
-
-                                              // RegExp exp = new RegExp(r"([a-zA-Z0-9]+)\s([a-zA-Z0-9]+)");
-
-                                              // fieldLatitude.text = exp.firstMatch(value)!.group(1).toString();
-                                              // latitudePaste = exp.firstMatch(value)!.group(1).toString();
-                                              // fieldLongitude.text = exp.firstMatch(value)!.group(2).toString();
-                                              // longitudePaste = exp.firstMatch(value)!.group(2).toString();
-
                                               List<String> values = value.split(",");
 
                                               fieldLatitude.text = values[0];

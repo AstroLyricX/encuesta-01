@@ -5,6 +5,8 @@
 
 
 
+
+
 export 'package:encuesta_app/screens/loading_gps_screen.dart';
 export 'package:encuesta_app/screens/card_screen.dart';
 export 'package:encuesta_app/screens/contents/input_datos_economicos.dart';
