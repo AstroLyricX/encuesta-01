@@ -53,24 +53,32 @@ class NavigationDrawer extends StatelessWidget {
 }
 
 
-Widget buildHeader(BuildContext context) => Container(
+Widget buildHeader(BuildContext context) => Material(
   color: Colors.green.shade500,
-  padding: EdgeInsets.only(
-    top: MediaQuery.of(context).padding.top,
-  ),
-  child: Column(
-    children: const [
-      CircleAvatar(
-        backgroundImage: NetworkImage('https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png'),
+  child:   InkWell(
+    onTap: () {
+      
+    },
+    child: Container(
+      padding: EdgeInsets.only(
+        top: 24 + MediaQuery.of(context).padding.top,
+        bottom: 24
       ),
-      SizedBox(height: 7),
-      Text('Robert Abs',
-      style: TextStyle(fontSize: 28, color: Colors.white),
+      child: Column(
+        children: const [
+          CircleAvatar(
+            backgroundImage: NetworkImage('https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png'),
+          ),
+          SizedBox(height: 7),
+          Text('Robert Abs',
+          style: TextStyle(fontSize: 28, color: Colors.white),
+          ),
+          Text('4,663,035',
+          style: TextStyle(fontSize: 16, color: Colors.white),
+          ),
+        ],
       ),
-      Text('4,663,035',
-      style: TextStyle(fontSize: 16, color: Colors.white),
-      ),
-    ],
+    ),
   ),
 );
 
